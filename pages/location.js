@@ -14,7 +14,6 @@ const LocationMap = () => {
     script.async = true;
     script.onload = () => {
       initMap();
-      window.google.maps.event.addDomListener(window, 'load', initMap);
     };
     document.head.appendChild(script);
 
