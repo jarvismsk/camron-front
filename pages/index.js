@@ -6,7 +6,7 @@ import Stem from './stem'
 import Review from './review'
 import Faq from './faq'
 import Footer from './footer'
-
+import LocationMap from './location';
 
 const Meta = () => {
   return (
@@ -97,7 +97,7 @@ const HomePage = () => {
 
 <Faq/>
 
-
+<LocationMap/>
 
 <Footer/>
 
