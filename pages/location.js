@@ -1,3 +1,4 @@
+// LocationMap.js
 import React, { useEffect, useRef, useState } from 'react';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
@@ -10,10 +11,11 @@ const LocationMap = () => {
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBsq6QxUjeCZayWhfKITk0DTb1D6ZzOxwQ&libraries=places`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBsq6QxUjeCZayWhfKITk0DTb1D6ZzOxwQ&libraries=places&callback=initMap`;
     script.async = true;
     script.onload = () => {
       initMap();
+      window.google.maps.event.addDomListener(window, 'load', initMap);
     };
     document.head.appendChild(script);
 
