@@ -137,14 +137,14 @@ const BrandPage = () => {
   return (
     <div>
       <Header />
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="container mx-auto px-3 md:px-8">
         <h1 className="text-4xl md:text-5xl lg:text-6xl pt-10 md:pt-20 font-bold text-black text-center">
           Select Camera Model
         </h1>
         {loading ? (
           <Loading />
         ) : (
-          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
             {models.map((model) => (
               <li key={model._id}>
                 <Link href={`/mobilenumber?brand=${brand}&model=${model.model}&price=${model.price}`}>

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Header from './header';
+import Footer from './footer';
 
 const LocationMap = () => {
   const [manualLocation, setManualLocation] = useState('');
@@ -149,7 +150,7 @@ const LocationMap = () => {
             value={manualLocation}
             onChange={handleManualLocationChange}
             placeholder="Enter location"
-            className="w-full p-2 border rounded"
+            className="w-full p-2  border rounded"
             ref={autocompleteRef}
           />
           <button
@@ -168,7 +169,9 @@ const LocationMap = () => {
         <div ref={mapRef} className="w-full h-96 mt-4 rounded overflow-hidden"></div>
         {message && <p className={`mt-4 ${message.includes('not found') ? 'text-red-500' : 'text-green-500'}`}>{message}</p>}
       </div>
+      <Footer/>
     </div>
+
   );
 };
 

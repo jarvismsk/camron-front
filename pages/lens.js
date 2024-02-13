@@ -50,7 +50,7 @@ const ScrollDownIndicator = () => {
 
   return (
     <div
-      className="fixed bottom-10 right-10 flex items-center justify-center bg-black rounded-full p-3 cursor-pointer"
+      className="fixed bottom-10 right-10 flex items-center justify-center bg-blue-500 rounded-full p-3 cursor-pointer"
       onClick={handleScrollDown}
     >
       <svg
@@ -123,7 +123,7 @@ const LensPage = ({ lenses }) => {
       <Header />
       <ScrollDownIndicator />
 
-      <h1 className="text-4xl md:text-5xl lg:text-6xl pt-0 mt-10 pb-3 mb-4 font-bold text-black text-center">
+      <h1 className="text-4xl md:text-5xl mx-3 lg:text-6xl pt-0 mt-8 pb-3 mb-0 font-bold text-black text-center">
         Select the Camera Lens
       </h1>
       <div className="flex-1 flex justify-center items-start">

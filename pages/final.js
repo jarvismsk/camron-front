@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import Footer from './footer';
 import Header from '../pages/header';
 
 const Meta = () => {
@@ -82,7 +83,7 @@ const FinalPage = () => {
               <h1 className="text-4xl text-gray-800 font-semibold mt-10 mb-8 text-center">
                   The Estimated Price is
               </h1>
-              <div className="bg-blue-500 bg-opacity-50 rounded-lg p-6 text-center max-w-md mx-auto">
+              <div className="bg-blue-600 bg-opacity-80 rounded-lg p-6 text-center max-w-md mx-auto">
                   <p className="text-4xl font-semibold text-white">₹ {calculateFinalPrice()}</p>
               </div>
               <div className="bg-blue-200 mt-8 p-6 rounded-lg mx-4 text-left">
@@ -113,6 +114,7 @@ const FinalPage = () => {
                   </a>
               </p>
           </div>
+          <Footer/>
       </div>
   );
 };

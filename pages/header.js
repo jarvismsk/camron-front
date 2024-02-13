@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router'; // Import useRouter
 import { CameraIcon } from '@heroicons/react/solid';
 
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const router = useRouter(); // Initialize useRouter
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -19,9 +21,9 @@ const Header = () => {
                 </div>
                 <div className="flex items-center space-x-6 lg:space-x-8">
                     <nav className="hidden lg:flex justify-center items-center space-x-8">
-                        <a href="#" className="text-gray-700 hover:text-black font-medium">Home</a>
-                        <a href="#" className="text-gray-700 hover:text-black font-medium flex items-center">Sell Camera <CameraIcon className="h-6 w-6 inline ml-1.5" aria-hidden="true" /></a>
-                        <a href="#" className="text-gray-700 hover:text-black font-medium">How it works?</a>
+                        <a href="/" className="text-gray-700 hover:text-black font-medium">Home</a>
+                        <a href="#" className="text-gray-700 hover:text-black font-medium flex items-center" onClick={() => router.push('/sellcamera')}>Sell Camera <CameraIcon className="h-6 w-6 inline ml-1.5" aria-hidden="true" /></a>
+                        <a href="/howitworks" className="text-gray-700 hover:text-black font-medium">How it works?</a>
                         <a href="#" className="text-gray-700 hover:text-black font-medium">Contact</a>
                     </nav>
                     <button onClick={toggleMobileMenu} className="lg:hidden text-gray-800 hover:text-black focus:outline-none">
@@ -41,16 +43,17 @@ const Header = () => {
                 <nav className="lg:hidden bg-white py-4 px-6 mt-4">
                     <ul className="flex flex-col items-start space-y-4">
                         <li>
-                            <a href="#" className="text-gray-600 hover:text-black font-medium">Home</a>
+                            <a onClick={() => setIsMobileMenuOpen(false)} href="/" className="text-gray-600 hover:text-black font-medium">Home</a>
                         </li>
                         <li>
-                            <a href="#" className="text-gray-600 hover:text-black font-medium flex items-center">Sell Camera <CameraIcon className="h-6 w-6 inline ml-1" aria-hidden="true" /></a>
+                            <a onClick={() => router.push('/sellcamera')} href="/sellcamera" className="text-gray-600 hover:text-black font-medium flex items-center">Sell Camera <CameraIcon className="h-6 w-6 inline ml-1" aria-hidden="true" /></a>
                         </li>
                         <li>
-                            <a href="#" className="text-gray-600 hover:text-black font-medium">How it works?</a>
+                            <a onClick={() => router.push('/howitworks')} href="/howitworks" className="text-gray-600 hover:text-black font-medium">How it works?</a>
                         </li>
                         <li>
-                            <a href="#" className="text-gray-600 hover:text-black font-medium">Contact</a>
+                        <a onClick={() => router.push('/contact')} href="/contact" className="text-gray-700 hover:text-black font-medium">Contact</a>
+
                         </li>
                     </ul>
                 </nav>
