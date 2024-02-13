@@ -1,7 +1,7 @@
-// pages/_app.js
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import '../styles/globals.css';
 
 export default function App({ Component, pageProps }) {
@@ -30,9 +30,10 @@ export default function App({ Component, pageProps }) {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       
-      {/* Render the component and Versel Analytics */}
+      {/* Render the component and Vercel Analytics */}
       <Component {...pageProps} />
       <Analytics />
+      <SpeedInsights /> {/* Add Vercel Speed Insights */}
       
       {/* Google Tag Manager script */}
       <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16443243167"></script>
