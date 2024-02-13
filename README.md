@@ -1,4 +1,4 @@
-Camco: A Modern Platform for Selling Your Cameras
+Camco: A New Modern Platform for Selling Your Cameras
 
 Camco is a sophisticated, full-stack web application designed to provide a seamless and hassle-free experience for users looking to sell their cameras and camera accessories.
 
