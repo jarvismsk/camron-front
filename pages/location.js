@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import Header from './header';
 
 const LocationMap = () => {
   const [manualLocation, setManualLocation] = useState('');
@@ -60,7 +61,7 @@ const LocationMap = () => {
         }
         mapInstance.setZoom(15); // Zoom to show searched location
         if (place.address_components.some(component => component.types.includes('country') && component.long_name === 'India')) {
-          setMessage('Great! Our services are available at your location.');
+          setMessage('Great! Our service are available at your location. We will call you shortly.');
         } else {
           setMessage('Sorry! Our services are not available outside India.');
         }
@@ -138,38 +139,35 @@ const LocationMap = () => {
   };
 
   return (
-    <div className="p-4">
-      <h1 className="text-xl font-semibold mb-4">Please Select the Location</h1>
-      <form
-        onSubmit={handleManualLocationSubmit}
-        className="flex flex-col mb-4"
-      >
-        <input
-          type="text"
-          value={manualLocation}
-          onChange={handleManualLocationChange}
-          placeholder="Enter location"
-          className="w-full p-2 border rounded"
-          ref={autocompleteRef}
-        />
+    <div className="bg-white min-h-screen">
+      <Header />
+      <div className="mx-auto max-w-screen-xl px-4 py-8">
+        <h1 className="text-2xl font-semibold mb-4">Please Select the Location</h1>
+        <form onSubmit={handleManualLocationSubmit} className="flex flex-col mb-4">
+          <input
+            type="text"
+            value={manualLocation}
+            onChange={handleManualLocationChange}
+            placeholder="Enter location"
+            className="w-full p-2 border rounded"
+            ref={autocompleteRef}
+          />
+          <button
+            type="submit"
+            className="w-full mt-2 bg-blue-500 text-white py-2 rounded cursor-pointer"
+          >
+            Search
+          </button>
+        </form>
         <button
-          type="submit"
-          className="w-full mt-2 bg-blue-500 text-white py-2 rounded cursor-pointer"
+          onClick={handleAutoLocationSubmit}
+          className="w-full bg-blue-800 text-white py-2 rounded cursor-pointer"
         >
-          Search
+          Use Current Location
         </button>
-      </form>
-      <button
-        onClick={handleAutoLocationSubmit}
-        className="w-full bg-blue-500 text-white py-2 rounded cursor-pointer"
-      >
-        Use Current Location
-      </button>
-      <div
-        ref={mapRef}
-        className="w-full h-96 mt-4 rounded overflow-hidden"
-      ></div>
-      {message && <p className={`mt-4 ${message.includes('not found') ? 'text-red-500' : 'text-green-500'}`}>{message}</p>}
+        <div ref={mapRef} className="w-full h-96 mt-4 rounded overflow-hidden"></div>
+        {message && <p className={`mt-4 ${message.includes('not found') ? 'text-red-500' : 'text-green-500'}`}>{message}</p>}
+      </div>
     </div>
   );
 };
