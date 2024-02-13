@@ -6,9 +6,9 @@ const LocationMap = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [map, setMap] = useState(null);
   const [marker, setMarker] = useState(null);
+  const [autocomplete, setAutocomplete] = useState(null);
   const autocompleteRef = useRef(null);
   const mapRef = useRef(null);
-  const autocompleteService = useRef(null);
   const placesService = useRef(null);
   const geocoder = useRef(null);
 
@@ -31,14 +31,21 @@ const LocationMap = () => {
     });
     setMap(mapInstance);
 
-    // Initialize autocomplete service
-    autocompleteService.current = new window.google.maps.places.AutocompleteService();
-
     // Initialize places service
     placesService.current = new window.google.maps.places.PlacesService(mapInstance);
 
     // Initialize geocoder
     geocoder.current = new window.google.maps.Geocoder();
+
+    // Initialize autocomplete
+    const autocompleteInstance = new window.google.maps.places.Autocomplete(
+      autocompleteRef.current
+    );
+    autocompleteInstance.bindTo('bounds', mapInstance);
+    setAutocomplete(autocompleteInstance);
+
+    // Listen for place changes
+    autocompleteInstance.addListener('place_changed', onPlaceChanged);
 
     // Fetch current location
     if (navigator.geolocation) {
@@ -70,56 +77,57 @@ const LocationMap = () => {
     }
   };
 
-  const handleManualLocationChange = (e) => {
-    setManualLocation(e.target.value);
-    if (e.target.value.trim() !== '') {
-      autocompleteService.current.getPlacePredictions(
-        { input: e.target.value },
-        handleAutocompleteResults
-      );
+  const onPlaceChanged = () => {
+    const place = autocomplete.getPlace();
+    if (!place.geometry) {
+      console.error('Place has no geometry');
+      return;
     }
+
+    if (place.geometry.viewport) {
+      map.fitBounds(place.geometry.viewport);
+    } else {
+      map.setCenter(place.geometry.location);
+      map.setZoom(17); // Zoom to show more details
+    }
+
+    // Clear existing marker
+    if (marker) {
+      marker.setMap(null);
+    }
+
+    // Add marker for selected place
+    const markerInstance = new window.google.maps.Marker({
+      map: map,
+      position: place.geometry.location,
+      title: place.name,
+    });
+    setMarker(markerInstance);
   };
 
-  const handleAutocompleteResults = (predictions, status) => {
-    if (status === window.google.maps.places.PlacesServiceStatus.OK) {
-      console.log('Autocomplete predictions:', predictions);
-      // Handle autocomplete predictions here
-    } else {
-      console.error('Autocomplete failed:', status);
-      // Handle autocomplete failure
-    }
+  const handleManualLocationChange = (e) => {
+    setManualLocation(e.target.value);
   };
 
   const handleManualLocationSubmit = (e) => {
     e.preventDefault();
-    console.log('Manually entered location:', manualLocation);
-    geocodeLocation(manualLocation);
-  };
-
-  const handleAutoLocationSubmit = () => {
-    if (!currentLocation) {
-      console.error('Current location not available.');
-      return;
+    if (autocomplete) {
+      autocomplete.set('place', null);
     }
-    console.log('Current location:', currentLocation);
-    // Send currentLocation to backend for further processing
-  };
-
-  const geocodeLocation = (location) => {
-    geocoder.current.geocode({ address: location }, (results, status) => {
-      if (status === 'OK') {
-        const locationLatLng = results[0].geometry.location;
-        setCurrentLocation(locationLatLng);
-        map.setCenter(locationLatLng);
+    geocoder.current.geocode({ address: manualLocation }, (results, status) => {
+      if (status === 'OK' && results[0]) {
+        const place = results[0];
+        setCurrentLocation(place.geometry.location);
+        map.setCenter(place.geometry.location);
         if (marker) {
-          marker.setPosition(locationLatLng);
+          marker.setPosition(place.geometry.location);
         } else {
-          const newMarker = new window.google.maps.Marker({
-            position: locationLatLng,
+          const markerInstance = new window.google.maps.Marker({
+            position: place.geometry.location,
             map: map,
-            title: 'Searched Location',
+            title: place.formatted_address,
           });
-          setMarker(newMarker);
+          setMarker(markerInstance);
         }
         map.setZoom(15); // Zoom to show searched location
       } else {
@@ -137,12 +145,10 @@ const LocationMap = () => {
           value={manualLocation}
           onChange={handleManualLocationChange}
           placeholder="Enter location"
+          ref={autocompleteRef}
         />
         <button type="submit">Search</button>
       </form>
-      <button onClick={handleAutoLocationSubmit}>
-        Use Current Location
-      </button>
       <div ref={mapRef} style={{ width: '100%', height: '400px', marginTop: '20px' }}></div>
     </div>
   );
