@@ -3,22 +3,14 @@ import React from 'react';
 const Testimonials = () => {
     const testimonials = [
         {
-            avatar: "https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg",
-            name: "Martin Escobar",
-            title: "Founder of Meta",
-            quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et est hendrerit, porta nunc vitae."
+            name: "Karthik G Menon",
+            title: "Coachin - Sold Nikon D5300",
+            quote: "The exceptional service and professionalism exceeded my expectations. I wholeheartedly recommend Camco to sale and buy your camera ."
         },
         {
-            avatar: "https://randomuser.me/api/portraits/women/79.jpg",
-            name: "Angela Stian",
-            title: "Product Designer",
-            quote: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
-        },
-        {
-            avatar: "https://randomuser.me/api/portraits/men/86.jpg",
-            name: "Karim Ahmed",
-            title: "DevOps Engineer",
-            quote: "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain."
+            name: "Akash Barman",
+            title: "Bangalore - Sold Nikon D5600",
+            quote: "The team for very polite and the entire experience for very quick."
         },
     ];
 
@@ -34,7 +26,7 @@ const Testimonials = () => {
                     {testimonials.map((item, idx) => (
                         <div key={idx} className="bg-white shadow-lg rounded-lg overflow-hidden">
                             <div className="p-6">
-                                <img src={item.avatar} alt={item.name} className="w-20 h-20 mx-auto rounded-full mb-4" />
+                                
                                 <h4 className="text-xl font-semibold text-gray-800 mb-1">{item.name}</h4>
                                 <p className="text-sm text-gray-600">{item.title}</p>
                                 <p className="text-gray-700 mt-4">{item.quote}</p>

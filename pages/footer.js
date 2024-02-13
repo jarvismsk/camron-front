@@ -17,7 +17,7 @@ export default () => {
             <div className="max-w-screen-xl mx-auto flex flex-col items-center justify-center space-y-4">
                 <img src="https://png.pngtree.com/png-vector/20221225/ourmid/pngtree-c-icon-metal-design-png-image_6536367.png" className="w-32 sm:mx-auto" />
                 <p className="text-center leading-relaxed mt-2 text-[15px]">
-                    At Camron, our goal is to streamline the process of selling your used camera, right from your doorstep, making it hassle-free and straightforward.
+                    At Camco, our goal is to easy the process of selling your used camera, right from your doorstep, making it hassle-free and straightforward.
                 </p>
             </div>
             <ul className="mt-8 flex justify-center space-x-4 sm:space-x-8">
@@ -29,7 +29,7 @@ export default () => {
             </ul>
             <div className="mt-8 flex items-center justify-between sm:justify-center">
                 <div>
-                    &copy; 2023 Camron All rights reserved.
+                    &copy; 2023 Camco All rights reserved.
                 </div>
                 <ul className="flex items-center space-x-4">
                     <li>

@@ -67,22 +67,27 @@ const FaqsCard = (props) => {
 const Faqs = () => {
     const faqsList = [
         {
-            q: "What cameras do you sell?",
-            a: "We sell a wide range of cameras, including DSLRs, mirrorless cameras, point-and-shoot cameras, and action cameras. Our inventory is constantly updated with the latest models from top brands."
+            q: "What camera brands can I sell?",
+            a: "We purchase Nikon, Canon, and Sony brands."
         },
         {
-            q: "Do you offer warranties for your cameras?",
-            a: "Yes, we provide warranties for all the cameras we sell. Our warranties cover manufacturing defects and malfunctions, ensuring that you can purchase with confidence."
+            q: "Are there any pickup charges?",
+            a: "No, we don't have any pickup charges; pickup is absolutely free across India."
         },
         {
-            q: "Can I return a camera if I'm not satisfied?",
-            a: "Yes, we have a hassle-free return policy. If you're not satisfied with your purchase for any reason, you can return the camera within 30 days for a full refund or exchange."
-        },
+            q: "Do I receive payment instantly?",
+            a: "Yes, you receive payment instantly before handing over to the executive."
+        },   
         {
-            q: "Do you offer financing options for camera purchases?",
-            a: "Yes, we offer financing options to make purchasing a camera more affordable. Our financing plans have flexible terms and competitive interest rates, making it easier to get the camera you want."
+            q: "How long do I have to wait for pickup?",
+            a: "We offer same-day pickup for your hassle-free experience."
+        },        
+        {
+            q: "Do you accept camera without the box or bill?",
+            a: "Sorry, we require at least the box or the bill."
         }
     ];
+    
 
     return (
         <section className="max-w-screen-xl mx-auto  px-10 md:px-4  pt-8 mt-4 md:pt-12  pb-16">
@@ -91,7 +96,7 @@ const Faqs = () => {
                     Frequently Asked Questions
                 </h1>
                 <p className="text-gray-600 max-w-lg mx-auto text-lg">
-                    Answered all frequently asked questions, Still confused? feel free to contact us.
+                Answered all frequently asked questions, Still wondering for the best price? feel free to contact us.
                 </p>
             </div>
             <div className="max-w-lg mx-auto">

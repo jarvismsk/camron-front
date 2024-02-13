@@ -21,7 +21,7 @@ const Header = () => {
                 <div>
                     <a href="/" className="flex items-center">
                         <img src="https://png.pngtree.com/png-vector/20221225/ourmid/pngtree-c-icon-metal-design-png-image_6536367.png" className="mr-3 h-12 sm:h-14" alt="Flowbite Logo" />
-                        <span className="text-2xl font-semibold sm:text-3xl">Camron</span>
+                        <span className="text-2xl font-semibold sm:text-3xl">Camco</span>
                     </a>
                 </div>
                 <div className="flex items-center space-x-6 lg:space-x-8">

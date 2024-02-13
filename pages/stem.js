@@ -4,18 +4,18 @@ export default () => {
     const [steps, setSteps] = useState([
         {
             title: "Get the Price",
-            description: "Submit your gadget details to get an instant price quote."
+            description: "Submit your camera details to receive an instant price quote."
         },
         {
             title: "We'll Call You",
-            description: "Our team will reach out to you to discuss the offer and process."
+            description: "Our team will contact you shortly to discuss the offer and details."
         },
         {
-            title: "Courier Pickup",
-            description: "Once agreed, we'll arrange a convenient courier pickup."
+            title: "Pickup",
+            description: "Once agreed, we'll arrange a convenient pickup at your doorstep."
         },
     ]);
-
+    
     const [currentStep, setCurrentStep] = useState(1);
 
     useEffect(() => {
