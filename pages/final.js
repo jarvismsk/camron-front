@@ -35,7 +35,7 @@ const Meta = () => {
         <meta name="twitter:url" content="https://www.camco.org.in/" />
       </>
     );
-  };
+};
 
 const FinalPage = () => {
     const router = useRouter();
@@ -85,20 +85,27 @@ const FinalPage = () => {
               <div className="bg-blue-500 bg-opacity-50 rounded-lg p-6 text-center max-w-md mx-auto">
                   <p className="text-4xl font-semibold text-white">₹ {calculateFinalPrice()}</p>
               </div>
-              <div className="bg-blue-200 mt-8 p-6 rounded-lg mx-5 text-center">
+              <div className="bg-blue-200 mt-8 p-6 rounded-lg mx-4 text-left">
+               
                   <p className="text-lg text-gray-800 mb-4">
-                      * This is just an estimate. The actual price may vary based on inspection.
-                  </p>
-                  <p className="text-lg text-gray-800 mb-4">
-                      * Will call you within few mins to take this further
+                      * The displayed price is not final and may vary based on the item's condition.
                   </p>
 
                   <p className="text-lg text-gray-800 mb-4">
-                      * For a personalized quote, please contact us.
+                      * We will contact you shortly to proceed with the sale.
                   </p>
+                  
               </div>
           </div>
-          <div className="mt-8 bg-white p-6 rounded-lg mx-5 text-center">
+
+          <button
+              onClick={() => router.push('/location')}
+              className="bg-blue-500 text-white py-3 px-6 rounded-md shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 my-0 mt-0 mx-auto"
+          >
+              Next: Select Location
+          </button>
+
+          <div className="mt-8 bg-white p-6 mb-16 rounded-lg mx-5 text-center">
               <p className="text-lg text-gray-800 mt-1">
                   Not satisfied with the price? Let's make it right! Call us at{' '}
                   <a href="tel:7022935544" className="text-blue-500 font-semibold">

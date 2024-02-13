@@ -109,6 +109,8 @@ const AccessoriesPage = () => {
                         .map(([accessory]) => accessory)
                         .join(',')}`}
                 >
+
+                    
                     <button
                         className="w-full py-8 px-4 my-3 bg-blue-500 text-white hover:bg-blue-600 rounded-md focus:ring focus:ring-blue-300 transition-colors"
                     >
@@ -121,3 +123,4 @@ const AccessoriesPage = () => {
 };
 
 export default AccessoriesPage;
+

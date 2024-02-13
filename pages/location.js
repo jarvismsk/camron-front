@@ -25,8 +25,8 @@ const LocationMap = () => {
 
   const initMap = () => {
     const mapInstance = new window.google.maps.Map(mapRef.current, {
-      center: { lat: -34.397, lng: 150.644 },
-      zoom: 8,
+      center: { lat: 12.9716, lng: 77.5946 }, // Default to Bangalore
+      zoom: 14,
     });
     setMap(mapInstance);
 
@@ -138,59 +138,38 @@ const LocationMap = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
-      <h1 style={{ margin: '20px 0', fontSize: '24px', color: '#333' }}>Find Your Location</h1>
+    <div className="p-4">
+      <h1 className="text-xl font-semibold mb-4">Please Select the Location</h1>
       <form
         onSubmit={handleManualLocationSubmit}
-        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+        className="flex flex-col mb-4"
       >
         <input
           type="text"
           value={manualLocation}
           onChange={handleManualLocationChange}
           placeholder="Enter location"
-          style={{
-            width: '80%',
-            padding: '10px',
-            borderRadius: '5px',
-            border: '1px solid #ccc',
-            marginBottom: '10px',
-          }}
+          className="w-full p-2 border rounded"
           ref={autocompleteRef}
         />
         <button
           type="submit"
-          style={{
-            padding: '10px 20px',
-            borderRadius: '5px',
-            border: 'none',
-            backgroundColor: '#007bff',
-            color: '#fff',
-            cursor: 'pointer',
-          }}
+          className="w-full mt-2 bg-blue-500 text-white py-2 rounded cursor-pointer"
         >
           Search
         </button>
       </form>
       <button
         onClick={handleAutoLocationSubmit}
-        style={{
-          margin: '10px 0',
-          padding: '10px 20px',
-          borderRadius: '5px',
-          border: 'none',
-          backgroundColor: '#007bff',
-          color: '#fff',
-          cursor: 'pointer',
-        }}
+        className="w-full bg-blue-500 text-white py-2 rounded cursor-pointer"
       >
         Use Current Location
       </button>
       <div
         ref={mapRef}
-        style={{ width: '90%', height: '400px', marginTop: '20px', borderRadius: '5px', overflow: 'hidden' }}
+        className="w-full h-96 mt-4 rounded overflow-hidden"
       ></div>
-      {message && <p style={{ marginTop: '10px', color: message.includes('not found') ? 'red' : 'green' }}>{message}</p>}
+      {message && <p className={`mt-4 ${message.includes('not found') ? 'text-red-500' : 'text-green-500'}`}>{message}</p>}
     </div>
   );
 };
