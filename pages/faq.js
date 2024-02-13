@@ -70,22 +70,28 @@ const Faqs = () => {
             q: "What camera brands can I sell?",
             a: "We purchase Nikon, Canon, and Sony brands."
         },
+
         {
-            q: "Are there any pickup charges?",
-            a: "No, we don't have any pickup charges; pickup is absolutely free across India."
+            q: "From which locations do you purchase cameras?",
+            a: "We offer free pickup across India at your doorstep."
+        },
+
+        {
+            q: "Do you accept camera without the box or bill?",
+            a: "Sorry, we require at least the box or the bill."
         },
         {
             q: "Do I receive payment instantly?",
-            a: "Yes, you receive payment instantly before handing over to the executive."
+            a: "Yes, you receive payment instantly before handing the camera to the executive."
         },   
         {
             q: "How long do I have to wait for pickup?",
             a: "We offer same-day pickup for your hassle-free experience."
         },        
         {
-            q: "Do you accept camera without the box or bill?",
-            a: "Sorry, we require at least the box or the bill."
-        }
+            q: "Are there any pickup charges?",
+            a: "No, we don't have any pickup charges, our pickup is absolutely free across India."
+        },
     ];
     
 
