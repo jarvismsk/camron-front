@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
-import { useRouter } from 'next/router'; // Import useRouter
+import { useRouter } from 'next/router';
 import { CameraIcon } from '@heroicons/react/solid';
 
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const router = useRouter(); // Initialize useRouter
+    const router = useRouter();
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+
+    const handleContactClick = () => {
+        router.push('/contact');
+        setIsMobileMenuOpen(false); // Close the mobile menu after navigation
     };
 
     return (
@@ -24,7 +29,7 @@ const Header = () => {
                         <a href="/" className="text-gray-700 hover:text-black font-medium">Home</a>
                         <a href="#" className="text-gray-700 hover:text-black font-medium flex items-center" onClick={() => router.push('/sellcamera')}>Sell Camera <CameraIcon className="h-6 w-6 inline ml-1.5" aria-hidden="true" /></a>
                         <a href="/howitworks" className="text-gray-700 hover:text-black font-medium">How it works?</a>
-                        <a href="#" className="text-gray-700 hover:text-black font-medium">Contact</a>
+                        <a href="#" className="text-gray-700 hover:text-black font-medium" onClick={handleContactClick}>Contact</a>
                     </nav>
                     <button onClick={toggleMobileMenu} className="lg:hidden text-gray-800 hover:text-black focus:outline-none">
                         {isMobileMenuOpen ? (
@@ -52,8 +57,7 @@ const Header = () => {
                             <a onClick={() => router.push('/howitworks')} href="/howitworks" className="text-gray-600 hover:text-black font-medium">How it works?</a>
                         </li>
                         <li>
-                        <a onClick={() => router.push('/contact')} href="/contact" className="text-gray-700 hover:text-black font-medium">Contact</a>
-
+                            <a onClick={handleContactClick} href="/contact" className="text-gray-600 hover:text-black font-medium">Contact</a>
                         </li>
                     </ul>
                 </nav>
