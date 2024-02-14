@@ -102,6 +102,8 @@ const LensPage = ({ lenses }) => {
 
   const lensImage = (model) => {
     switch (model) {
+
+      // Canon Lens
       case 'Canon EF-S 18-55mm f/3.5-5.6':
         return '/images/canonLens/canon18-55.png';
       case 'Canon EF-S 55-250mm F4-5.6':
@@ -112,6 +114,45 @@ const LensPage = ({ lenses }) => {
         return '/images/canonLens/canon15-45.png';
       case 'Canon EF-S 18-135mm f/3.5-5.6':
         return '/images/canonLens/canon18-135.png';
+
+        // Nikon Lens
+
+        case 'Nikon 18-55mm F/3.5-5.6G':
+          return '/images/nikonLens/nikon18-55.png';
+
+        case 'Nikon 70-300 mm f/4.5-6.3G':
+          return '/images/nikonLens/nikon70-300.png';
+
+        case 'Nikon 50mm F/1.8G':
+          return '/images/nikonLens/nikon50.png';
+
+        case 'Nikon 18-140mm F/3.5-5.6G':
+          return '/images/nikonLens/nikon18-140.png';
+
+          case 'Nikon 16-50mm f/3.5-6.3':
+          return '/images/nikonLens/nikon16-50.png';
+
+          case 'Nikon 50-250mm f/4.5-6.3':
+          return '/images/nikonLens/nikon50-250.png';
+
+        // Sony Lens
+        
+        case 'Sony 16-50 mm F3.5-5.6':
+          return '/images/sonyLens/sony16-50.png';
+
+          case 'Sony 55 210 mm F4.5 6.3':
+            return '/images/sonyLens/sony55-210.png';
+
+          case 'Sony 50mm F1.8':
+              return '/images/sonyLens/sony50.png';
+    
+          case 'Sony 18-135mm F3.5-5.6':
+                return '/images/sonyLens/sony18-135.png';
+                
+
+
+
+
       // Add cases for other lens models
       default:
         return '/images/default.png'; // Default image path
