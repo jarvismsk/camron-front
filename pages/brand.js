@@ -147,7 +147,7 @@ const BrandPage = () => {
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
             {models.map((model) => (
               <li key={model._id}>
-                <Link href={`/lens?brand=${brand}&model=${model.model}&price=${model.price}`}>
+                <Link href={`/mobilenumber?brand=${brand}&model=${model.model}&price=${model.price}`}>
                   <div className="block bg-white border border-gray-300 rounded-lg shadow-md transition-transform transform hover:-translate-y-2 cursor-pointer">
                     <div className="p-6">
                       <div className="flex items-center justify-center">
