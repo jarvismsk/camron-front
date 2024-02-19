@@ -33,11 +33,11 @@ export default () => {
             <h2 className="text-3xl underline decoration-solid font-bold decoration-blue-600 text-gray-900 mb-8">Our Process</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {steps.map((step, idx) => (
-                    <div key={idx} className={`bg-white rounded-lg shadow-lg p-6 text-center ${idx + 1 <= currentStep ? "border-2 border-indigo-600" : ""}`}>
-                        <div className={`rounded-full w-16 h-16 flex items-center justify-center bg-indigo-600 text-white font-bold mb-6 mx-auto`}>
+                    <div key={idx} className={`bg-white rounded-lg shadow-lg p-6 text-center ${idx + 1 <= currentStep ? "border-2 border-blue-600" : ""}`}>
+                        <div className={`rounded-full w-16 h-16 flex items-center justify-center bg-blue-600 text-white font-bold mb-6 mx-auto`}>
                             {idx + 1}
                         </div>
-                        <h3 className={`font-semibold text-lg ${idx + 1 === currentStep ? "text-indigo-600" : "text-gray-800"}`}>{step.title}</h3>
+                        <h3 className={`font-semibold text-lg ${idx + 1 === currentStep ? "text-blue-600" : "text-gray-800"}`}>{step.title}</h3>
                         <p className="text-gray-600 mt-4">{step.description}</p>
                     </div>
                 ))}

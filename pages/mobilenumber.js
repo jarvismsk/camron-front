@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Header from '../pages/header';
 import { FaMobileAlt } from 'react-icons/fa'; // Import the mobile icon
-import Loading from './Loading'; // Import the loading component
+
 
 const MobileNumber = () => {
   const router = useRouter();
@@ -108,7 +108,7 @@ const MobileNumber = () => {
           Please Enter Your Mobile Number to Check the 
         </h1>
         <p className="text-lg text-white text-center mt-2">
-        Estimated Price: ₹XX,XXX
+          Estimated Price: ₹XX,XXX
         </p>
       </div>
       <div className="flex-1 flex justify-center items-start mt-8">
@@ -125,18 +125,13 @@ const MobileNumber = () => {
           </div>
           {error && <p className="text-red-500 text-center mt-2">{error}</p>}
           <div className="mt-6 text-center">
-    
-            {loading ? (
-              <Loading />
-            ) : (
-              <button
-                type="submit"
-                onClick={handleSubmit}
-                className="px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:ring focus:ring-blue-300 transition-colors"
-              >
-                Continue
-              </button>
-            )}
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className={`px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:ring focus:ring-blue-300 transition-colors ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+            >
+              {loading ? 'Please wait...' : 'Continue'}
+            </button>
           </div>
         </div>
       </div>

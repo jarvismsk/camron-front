@@ -19,7 +19,7 @@ const Header = () => {
         
         <header className="bg-white border-b border-gray-200">
 
-<div class="bg-indigo-600 py-4">
+<div class="bg-blue-600 py-4">
     <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center">
         <a href="tel:7022935544" class="text-white font-semibold  duration-150 hover:text-indigo-100 flex items-center gap-x-1">
             <span class="sm:hidden"> Call us: +91 7022935544</span>
