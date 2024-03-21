@@ -5,6 +5,11 @@ export default () => {
             href: '/howitworks',
             name: 'How it Works?'
         },
+        
+        {
+            href: '/policy',
+            name: 'Policy'
+        },
 
         {
             href: '/contact',

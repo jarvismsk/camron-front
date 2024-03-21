@@ -11,6 +11,8 @@ const MobileNumber = () => {
   const [loading, setLoading] = useState(false); // Add loading state
   const [mobileNumber, setMobileNumber] = useState("");
   const [error, setError] = useState("");
+  const [policyAccepted, setPolicyAccepted] = useState(false); // Add state for policy acceptance
+
 
 
 
@@ -90,6 +92,12 @@ const MobileNumber = () => {
       return;
     }
 
+    if (!policyAccepted) {
+      setError('Please accept the policy');
+      setLoading(false); // Set loading to false if policy is not accepted
+      return;
+    }
+
     try {
       await addMobileNumber(mobileNumber);
     } catch (error) {
@@ -124,6 +132,17 @@ const MobileNumber = () => {
             />
           </div>
           {error && <p className="text-red-500 text-center mt-2">{error}</p>}
+          <div className="mt-4 flex items-center">
+            <input
+              type="checkbox"
+              checked={policyAccepted}
+              onChange={() => setPolicyAccepted(!policyAccepted)}
+              className="mr-2"
+            />
+            <p className="text-sm">
+              I accept the Terms &  <Link className="text-blue-500" href="/policy">Policy</Link>
+            </p>
+          </div>
           <div className="mt-6 text-center">
             <button
               type="submit"
