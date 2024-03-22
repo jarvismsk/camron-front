@@ -72,7 +72,7 @@ const AccessoriesPage = () => {
     return (
         <div className="bg-white min-h-screen flex flex-col">
             <Header />
-            <h1 className="text-4xl md:text-5xl px-2 mx-2 pb-0 mb-0 md:mb-4 mt-10 font-bold text-gray-800 text-center">
+            <h1 className="text-4xl md:text-5xl px-2 mx-2 pb-0 mb-0 md:mb-4 mt-10 font-bold text-blue-600 text-center">
                 Select the Accessories
             </h1>
             <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 md:p-10">

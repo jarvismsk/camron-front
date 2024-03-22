@@ -66,7 +66,7 @@ const ConditionPage = () => {
     return (
       <div className="bg-white min-h-screen flex flex-col">
           <Header />
-          <h1 className="text-4xl md:text-5xl pb-3 mb-4 mx-5 my-5 lg:text-6xl mt-0 pt-14 font-bold text-gray-800 text-center">
+          <h1 className="text-4xl md:text-5xl pb-3 mb-4 mx-5 my-5 lg:text-6xl mt-0 pt-14 font-bold text-blue-600 text-center">
               Select the Camera Condition
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 md:p-10 md:px-44">

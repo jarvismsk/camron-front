@@ -110,15 +110,24 @@ const LensPage = ({ lenses }) => {
         return '/images/canonLens/canon55-250.png';
       case 'Canon EF 50mm F/1.8':
         return '/images/canonLens/canon50.png';
-      case 'Canon 15-45mm f3.5-6.3':
+      case 'Canon RF 15-45mm f3.5-6.3':
         return '/images/canonLens/canon15-45.png';
       case 'Canon EF-S 18-135mm f/3.5-5.6':
         return '/images/canonLens/canon18-135.png';
+
+        case 'Canon RF-S 18-150mm f3.5-6.3':
+        return '/images/canonLens/rf150.png';
+      case 'Canon RF 24-105mm f4-7.1':
+        return '/images/canonLens/image.png';
 
         // Nikon Lens
 
         case 'Nikon 18-55mm F/3.5-5.6G':
           return '/images/nikonLens/nikon18-55.png';
+
+        case ' Mount FTZ Adapter':
+          return '/images/nikonLens/image.png';
+
 
         case 'Nikon 70-300 mm f/4.5-6.3G':
           return '/images/nikonLens/nikon70-300.png';
@@ -164,7 +173,7 @@ const LensPage = ({ lenses }) => {
       <Header />
       <ScrollDownIndicator />
 
-      <h1 className="text-4xl md:text-5xl mx-3 lg:text-6xl pt-0 mt-8 pb-3 mb-0 font-bold text-black text-center">
+      <h1 className="text-4xl md:text-5xl mx-3 lg:text-6xl pt-0 mt-8 pb-3 mb-0 font-bold text-blue-600 text-center">
         Select the Camera Lens
       </h1>
       <div className="flex-1 flex justify-center items-start">

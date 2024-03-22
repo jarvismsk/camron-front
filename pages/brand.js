@@ -66,6 +66,16 @@ const BrandPage = () => {
       case 'Canon 200D M2':
         return "/images/canonModels/canon200dm2.png";
 
+
+        case 'Canon RP':
+          return "/images/canonModels/canonrp.png";
+          
+        case 'Canon R10':
+            return "/images/canonModels/canonr10.png";
+
+          case 'Canon R50':
+              return "/images/canonModels/canonr50.png";
+
       case 'Canon M50':
         return "/images/canonModels/canonm50.png";
 
@@ -101,6 +111,9 @@ const BrandPage = () => {
 
       case 'Nikon D5600':
         return "/images/nikonModels/nikon5600.png";
+
+      case 'Nikon Z30':
+        return "/images/nikonModels/nikonz30.png"
 
 
       case 'Nikon D7500D':
@@ -140,7 +153,7 @@ const BrandPage = () => {
     <div>
       <Header />
       <div className="container mx-auto px-3 md:px-8">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl pt-10 md:pt-20 font-bold text-black text-center">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl pt-10 md:pt-20 font-bold text-blue-600 text-center">
           Select Camera Model
         </h1>
         {loading ? (

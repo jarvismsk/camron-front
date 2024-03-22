@@ -111,7 +111,7 @@ const MobileNumber = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <Header />
-      <div className="bg-blue-500 w-full py-6">
+      <div className="bg-blue-600 w-full py-6">
         <h1 className="text-3xl font-bold text-white text-center">
           Please Enter Your Mobile Number to Check the 
         </h1>
