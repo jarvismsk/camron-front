@@ -95,11 +95,13 @@ const BrandPage = () => {
 
       //Nikon
 
-      case 'Nikon D5600':
-        return "/images/nikonModels/nikon5600.png";
 
       case 'Nikon D5300':
         return "/images/nikonModels/nikon5300.png";
+
+      case 'Nikon D5600':
+        return "/images/nikonModels/nikon5600.png";
+
 
       case 'Nikon D7500D':
         return "/images/nikonModels/nikon7500.png";
