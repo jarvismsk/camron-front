@@ -12,6 +12,11 @@ const Testimonials = () => {
             title: "Bangalore - Sold Nikon D5600",
             quote: "The team for very polite and the entire experience for very quick."
         },
+        {
+            name: "Nikhil",
+            title: "Bangalore - Sold Nikon Z30",
+            quote: "Anybody who wants to sell cameras, Camco is a very good and easy platform to sell used cameras, They handle customer in a very polite way.  I'm satisfied with the service."
+        },
     ];
 
     return (

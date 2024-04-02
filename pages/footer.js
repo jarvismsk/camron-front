@@ -34,7 +34,7 @@ export default () => {
             </ul>
             <div className="mt-8 flex items-center justify-between sm:justify-center">
                 <div>
-                    &copy; 2023 Camco All rights reserved.
+                    &copy; 2024 Camco All rights reserved.
                 </div>
                 <ul className="flex items-center space-x-4">
                     <li>
