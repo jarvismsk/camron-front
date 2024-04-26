@@ -50,7 +50,7 @@ export default () => {
 
             <div className=" flex items-center justify-between sm:justify-center">
                 <div>
-                A Part of Fusionics Space Ventures Private Limited
+                A Part of Fusionics Space Ventures
                 </div>
                 <ul className="flex items-center space-x-4">
                     <li>
