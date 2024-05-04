@@ -238,7 +238,7 @@ export async function getServerSideProps({ query }) {
 
   // Ensure the API endpoint name corresponds to the naming convention
   const res = await fetch(
-    `https://stark-meadow-99394-06b7b830b309.herokuapp.com/${brand.toLowerCase()}lens`
+    `https://afternoon-plains-90133-d74578619104.herokuapp.com/${brand.toLowerCase()}lens`
   );
   const lenses = await res.json();
 
