@@ -62,7 +62,7 @@ const MobileNumber = () => {
     };
 
     try {
-      const response = await fetch("https://afternoon-plains-90133-d74578619104.herokuapp.com/mobilenumber", {
+      const response = await fetch("https://infinite-dusk-30605-e20af80cdc9e.herokuapp.com/mobilenumber", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
