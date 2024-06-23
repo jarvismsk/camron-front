@@ -18,7 +18,7 @@ const Header = () => {
     return (
         <header className="bg-white border-b border-gray-200">
             <div className="bg-neutral-950	 text-white text-center py-2">
-                Camco is now - <a href="https://reprice.in" className=" hover:text-gray-300">Reprice</a>
+                Camco is now - <a href="https://reprice.in" className=" hover:text-gray-300">Reprice.in</a>
             </div>
 
             <div className="bg-blue-600 py-4">
