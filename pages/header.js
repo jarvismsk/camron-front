@@ -16,24 +16,19 @@ const Header = () => {
     };
 
     return (
-        
         <header className="bg-white border-b border-gray-200">
+            <div className="bg-neutral-950	 text-white text-center py-2">
+                Camco is now - <a href="https://reprice.in" className=" hover:text-gray-300">Reprice</a>
+            </div>
 
-<div class="bg-blue-600 py-4">
-    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center">
-        <a href="tel:7022935544" class="text-white font-semibold  duration-150 hover:text-indigo-100 flex items-center gap-x-1">
-            <span class="sm:hidden"> Call us: +91 7022935544</span>
-            <span class="hidden sm:inline"> Questions?  -   Call us - </span> <span class="hidden sm:inline">+91 7022935544</span>
-        
-        </a>
-    </div>
-</div>
-
-
-
-
-
-
+            <div className="bg-blue-600 py-4">
+                <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center">
+                    <a href="tel:7022935544" className="text-white font-semibold duration-150 hover:text-indigo-100 flex items-center gap-x-1">
+                        <span className="sm:hidden"> Call us: +91 7022935544</span>
+                        <span className="hidden sm:inline"> Questions?  -   Call us - </span> <span className="hidden sm:inline">+91 7022935544</span>
+                    </a>
+                </div>
+            </div>
 
             <div className="mx-auto max-w-screen-xl px-6 py-4 lg:px-8 flex justify-between items-center">
                 <div>
